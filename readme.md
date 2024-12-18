@@ -1,8 +1,10 @@
 ### React Native Theme Dark
 
 > App screenshot
-<div style="display: flex; justify-content:space-between;">
-![alt text](datk.jpg) ![alt text](light.jpg) ![alt text](<tela inicial.jpg>)
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="datk.jpg" alt="alt text" style="max-width: 30%; margin-right: 10px;" />
+  <img src="light.jpg" alt="alt text" style="max-width: 30%; margin-right: 10px;" />
+  <img src="tela%20inicial.jpg" alt="alt text" style="max-width: 30%;" />
 </div>
 
 > Bibliotecas utilizadas: 
