@@ -1,11 +1,8 @@
 ### React Native Theme Dark
 
 > App screenshot
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <img src="datk.jpg" alt="alt text" style="max-width: 30%; height: auto; margin-right: 10px;" />
-  <img src="light.jpg" alt="alt text" style="max-width: 30%; height: auto; margin-right: 10px;" />
-  <img src="tela%20inicial.jpg" alt="alt text" style="max-width: 30%; height: auto;" />
-</div>
+![mobileMokup](https://github.com/user-attachments/assets/03c20173-1685-466b-8273-29a506b14d3e)
+
 
 > Bibliotecas utilizadas: 
 
