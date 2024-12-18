@@ -1,6 +1,7 @@
 ### React Native Theme Dark
 
 > App screenshot
+
 ![mobileMokup](https://github.com/user-attachments/assets/03c20173-1685-466b-8273-29a506b14d3e)
 
 
@@ -16,4 +17,4 @@ react-native-gesture-handler
 @shopify/react-native-skia
 ```
 
-!. By inneobr
+By inneobr
