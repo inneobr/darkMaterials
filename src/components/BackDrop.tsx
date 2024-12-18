@@ -1,5 +1,6 @@
 import Animated, { interpolate, SharedValue, useAnimatedStyle } from "react-native-reanimated";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
+import { dark } from "@/unistyles/theme";
 
 type Props = {
     translateY: SharedValue<number>;
@@ -32,7 +33,7 @@ export default BackDrop
 const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
-        backgroundColor: "#000",
+        backgroundColor: dark.colors.background,
         display: 'none'
     },
 });

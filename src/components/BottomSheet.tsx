@@ -1,10 +1,12 @@
 import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import React, { forwardRef, useCallback, useImperativeHandle, useState } from "react";
-import { StyleSheet, useWindowDimensions } from "react-native";
-
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
+
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { StyleSheet, useWindowDimensions } from "react-native";
+import { dark, light } from "@/unistyles/theme"
 import BackDrop from "./BackDrop";
+
 import Switch from './Switch';
 import Icon from './Icon';
 
@@ -72,19 +74,19 @@ const BottomSheet = forwardRef<BottomSheetMethods, Props>(({setThemeSwitch, them
 
     const backGoundColorAnimation = useAnimatedStyle(() => {
         return {
-            backgroundColor: theme === 'dark' ? withTiming('#22273B') : withTiming('#F0F0F0')
+            backgroundColor: theme === 'dark' ? withTiming(dark.colors.card) : withTiming(light.colors.card)
         }
     });
 
     const textColorAnimation = useAnimatedStyle(() => {
         return {
-            color: theme === 'dark' ? withTiming('#FFF') : withTiming('#000')
+            color: theme === 'dark' ? withTiming(dark.colors.text) : withTiming(light.colors.text)
         }
     });
 
     const lineColorAnimation = useAnimatedStyle(() => {
         return {
-            backgroundColor: theme === 'dark' ? withTiming('#FFF') : withTiming('#000')
+            backgroundColor: theme === 'dark' ? withTiming(dark.colors.text) : withTiming(light.colors.text)
         }
     });
 
@@ -131,7 +133,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignSelf: "center",
         paddingVertical: 40,
-        borderRadius: 30
+        borderRadius: 30,
+        elevation: 16
     },
     
     line: {
@@ -146,11 +149,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginBottom: 14,
         marginTop: 40,
-        fontSize: 22,
+        fontSize: light.fonts.size.xl,
     },
 
     text: {
-        fontSize: 16,
+        fontSize: light.fonts.size.md,
         fontWeight: '500',
     }
 });

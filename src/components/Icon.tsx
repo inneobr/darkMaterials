@@ -2,6 +2,7 @@ import { useDerivedValue, useSharedValue, withSpring } from "react-native-reanim
 import { Canvas, Circle, Group, LinearGradient, Mask, rotate } from "@shopify/react-native-skia"
 import { StyleSheet } from "react-native";
 import {  useEffect } from "react";
+import { dark, light } from "@/unistyles/theme";
 
 type Props = {
     theme: string | null | undefined;
@@ -10,8 +11,8 @@ type Props = {
 const RADIUS = 70;
 
 const Icon = ({theme}: Props) => {
-    const gradientColor1 = useSharedValue('#FF4467');
-    const gradientColor2 = useSharedValue('#FF8E0B');
+    const gradientColor1 = useSharedValue(light.colors.gradientColorStart);
+    const gradientColor2 = useSharedValue(light.colors.gradientColorEnd);
     const cy   = useSharedValue(0);
     const mask = useSharedValue(0);
 
@@ -23,13 +24,13 @@ const Icon = ({theme}: Props) => {
         if(theme === 'light'){
             cy.value   = withSpring(0);
             mask.value = withSpring(0)
-            gradientColor1.value = withSpring('#FF4467');
-            gradientColor2.value = withSpring('#FF8E0B');
+            gradientColor1.value = withSpring(light.colors.gradientColorStart);
+            gradientColor2.value = withSpring(light.colors.gradientColorEnd);
         } else {
             cy.value   = withSpring(RADIUS / 2,{duration:2000});
             mask.value = withSpring(RADIUS,    {duration:2000});
-            gradientColor1.value = withSpring('#8371FF');
-            gradientColor2.value = withSpring('#86BFFF');
+            gradientColor1.value = withSpring(dark.colors.gradientColorStart);
+            gradientColor2.value = withSpring(dark.colors.gradientColorEnd);
         }
     }, [gradientColor1, gradientColor2, theme]);
 
@@ -38,8 +39,8 @@ const Icon = ({theme}: Props) => {
             <Mask mode="luminance" 
                 mask= {
                     <Group>
-                        <Circle cx={RADIUS} cy={RADIUS} r={RADIUS} color={"#FFF"}/>
-                        <Circle cx={RADIUS} cy={cy} r={mask} color={"#000"}/>
+                        <Circle cx={RADIUS} cy={RADIUS} r={RADIUS} color={light.colors.background}/>
+                        <Circle cx={RADIUS} cy={cy} r={mask} color={dark.colors.background}/>
                     </Group>
                 }
             >            

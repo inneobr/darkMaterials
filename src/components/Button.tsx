@@ -1,6 +1,7 @@
 import Animated, { useAnimatedStyle, withTiming } from "react-native-reanimated";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { BottomSheetMethods } from "./BottomSheet";
+import { dark, light } from "@/unistyles/theme";
 
 type Props = {
     bottomSheetRef: React.RefObject<BottomSheetMethods>;
@@ -10,13 +11,13 @@ type Props = {
 const Button = ({bottomSheetRef, theme}: Props) => {
     const backGoundColorAnimation = useAnimatedStyle(() => {
         return {
-            backgroundColor: theme === 'dark' ? withTiming('#22273B') : withTiming('#F0F0F0')
+            backgroundColor: theme === 'dark' ? withTiming(light.colors.shape) : withTiming(dark.colors.shape)
         }
     });
 
     const textColorAnimation = useAnimatedStyle(() => {
         return {
-            color: theme === 'dark' ? withTiming('#FFF') : withTiming('#000')
+            color: theme === 'dark' ? withTiming(light.colors.background) : withTiming(dark.colors.background)
         }
     });
 
@@ -40,6 +41,6 @@ const styles = StyleSheet.create({
 
     text: {
         fontWeight: '500',
-        fontSize: 16,
+        fontSize: light.fonts.size.md,
     }
 });

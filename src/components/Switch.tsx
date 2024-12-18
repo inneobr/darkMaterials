@@ -1,6 +1,7 @@
 import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 import { Appearance, Pressable, StyleSheet, useWindowDimensions } from "react-native";
 import { useEffect } from "react";
+import { dark, light } from "@/unistyles/theme";
 
 type Props = {
     setThemeSwitch: React.Dispatch<React.SetStateAction<string>>;
@@ -34,19 +35,19 @@ const Switch = ({setThemeSwitch, themeSwitch, setTheme, theme }: Props) => {
 
     const backGoundColorAnimation = useAnimatedStyle(() => {
         return {
-            backgroundColor: theme === 'dark' ? withTiming('#000') : withTiming('#F0F0F0')
+            backgroundColor: theme === 'dark' ? withTiming(dark.colors.background) : withTiming(light.colors.background)
         }
     });
 
     const slideColorAnimation = useAnimatedStyle(() => {
         return {
-            backgroundColor: theme === 'dark' ? withTiming('#22272B') : withTiming('#FFF')
+            backgroundColor: theme === 'dark' ? withTiming(light.colors.shape) : withTiming(dark.colors.shape)
         }
     });
 
     const textColorAnimation = useAnimatedStyle(() => {
         return {
-            color: theme === 'dark' ? withTiming('#FFF') : withTiming('#000')
+            color: theme === 'dark' ? withTiming(dark.colors.text) : withTiming(light.colors.text)
         }
     });
 
@@ -88,15 +89,13 @@ export default Switch
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: dark.colors.shape,
         justifyContent: "space-evenly",
-        backgroundColor: "#F0F0F0",
         flexDirection: "row",
         overflow: 'hidden',     
         borderRadius: 40,
         marginTop: 20,
-    },
-
-    
+    },    
 
     button: {
         alignItems : "center",
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
     },
 
     textButton: {
-        color: "#000",
+        color: dark.colors.background,
         fontWeight: '500'
     },
     
@@ -116,7 +115,6 @@ const styles = StyleSheet.create({
     },
 
     slide: {
-        backgroundColor: "#FFF",
         borderRadius: 100,
         padding: 23,
     }
