@@ -111,9 +111,9 @@ const BottomSheet = forwardRef<BottomSheetMethods, Props>(({setThemeSwitch, them
                 > 
                     <Animated.View style={[styles.line, lineColorAnimation]} /> 
                     <Icon theme={theme}/>              
-                    <Animated.Text style={[styles.textTitle, textColorAnimation]}>Bottom sheet</Animated.Text>
-                    <Animated.Text style={[styles.text, textColorAnimation]}>Pop or subtitle</Animated.Text>
-                    <Animated.Text style={[styles.text, textColorAnimation]}>Customize</Animated.Text>
+                    <Animated.Text style={[styles.textTitle, textColorAnimation]}>Theme settings</Animated.Text>
+                    <Animated.Text style={[styles.text, textColorAnimation]}>configurações de cores e thema</Animated.Text>
+                    <Animated.Text style={[styles.text, textColorAnimation]}>by sistemas inneo.org</Animated.Text>
                     <Switch setThemeSwitch={setThemeSwitch} themeSwitch={themeSwitch} setTheme={setTheme} theme={theme}/>
                 </Animated.View>
             </GestureDetector> 
